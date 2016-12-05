@@ -1,0 +1,49 @@
+<template>
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">Slider</h1>
+        <p class="page__desc">滑块</p>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <div class="weui-slider">
+            <div class="weui-slider__inner">
+                <div style="width: 0;" class="weui-slider__track"></div>
+                <div style="left: 0;" class="weui-slider__handler"></div>
+            </div>
+        </div>
+        <br>
+        <div class="weui-slider-box">
+            <div class="weui-slider">
+                <div id="sliderInner" class="weui-slider__inner">
+                    <div id="sliderTrack" style="width: 50%;" class="weui-slider__track"></div>
+                    <div id="sliderHandler" style="left: 50%;" class="weui-slider__handler"></div>
+                </div>
+            </div>
+            <div id="sliderValue" class="weui-slider-box__value">50</div>
+        </div>
+    </div>
+</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      isIosActive: false,
+      isIosDisplay: 'none',
+      isAndronActive: false,
+      isAndrionDisplay: 'none',
+    };
+  },
+  methods: {
+    iosHandleClick() {
+      this.isIosActive = !this.isIosActive;
+      this.isIosDisplay = (this.isIosDisplay === 'none' ? 'block' : 'none');
+    },
+    andrionHandleClick() {
+      this.isAndrionActive = !this.isAndrionActive;
+      this.isAndrionDisplay = (this.isAndrionDisplay === 'none' ? 'block' : 'none');
+    },
+  },
+};
+</script>
